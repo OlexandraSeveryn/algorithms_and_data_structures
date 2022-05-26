@@ -22,6 +22,9 @@ class Penguin:
                f'и относится к {self.get_size()}. Обитает в {self.get_areal()} ' \
                 f'регионе, а также, как и любой пингвин {self.flying}'
 
+    def __repr__(self):
+        return f'Penguin({self.name} {self.breed} {self.size} {self.areal} {self.flying})'
+
     def get_size(self):
         if self.size >= int(100):
             return "крупным"
@@ -51,8 +54,11 @@ if __name__ == "__main__":
     penguin = Penguin("Шкипер", "королевский", 60, "Европа")
     print(penguin.get_info())
 
-    penguin = Penguin("Ковальски", "хохлатый", 105, "Северная Америка")
+    penguin2 = Penguin("Ковальски", "хохлатый", 105, "Северная Америка")
     print(penguin.get_info())
 
-    penguin = Penguin("Рико", "антарктический", 80, "Арктика")
+    penguin3 = Penguin("Рико", "антарктический", 80, "Арктика")
     print(penguin.get_info())
+
+    penguinlist = [penguin, penguin2, penguin3]
+    print(penguinlist)
