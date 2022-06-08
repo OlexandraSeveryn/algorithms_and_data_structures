@@ -60,7 +60,6 @@ if __name__ == "__main__":
     penguin4 = gen.generate_single()
     penguin5 = gen.generate_single()
     print([penguin1, penguin2, penguin3, penguin4])
-
     s_list = List()
     print("add_1: " + str(s_list.add(penguin1)))
     print("add_2: " + str(s_list.add(penguin2)))

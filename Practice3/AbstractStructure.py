@@ -34,6 +34,7 @@ class AbstractStructure(ABC):
         """Удаление элемента структуры данных по значению"""
         ...
 
+
     @abstractmethod
     def get_all(self) -> list:
         """Вывод списком всех элементов структуры данных"""

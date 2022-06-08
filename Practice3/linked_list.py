@@ -128,6 +128,7 @@ if __name__ == "__main__":
     penguin4 = gen.generate_single()
     penguin5 = gen.generate_single()
     print("все пингвины:", [penguin1, penguin2, penguin3, penguin4, penguin5])
+
     link_list = LinkedList()
     print("----- method add-----")
     print("add_1: " + str(link_list.add(penguin1)))

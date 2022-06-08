@@ -24,7 +24,7 @@ print('Добавление 10000 элементов в конец массив�
 # таймер для добавления элементов в начало массива
 start_time = datetime.utcnow()
 
-s_list = List()
+# s_list = List()
 # s_list = LinkedList()
 for penguin in generator_10000:
     s_list.add(penguin, 0)
