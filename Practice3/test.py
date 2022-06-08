@@ -1,6 +1,6 @@
 from algorithms.SecondPractice.practice import Generator
 from standart_list import List
-from linked_list import LinkList
+from linked_list import LinkedList
 from datetime import datetime
 
 generator = Generator()
@@ -14,8 +14,8 @@ print('Генерация 10000 новых элементов:\n' + str(stop_tim
 # таймер добавления элементов в конец массива
 start_time = datetime.utcnow()
 
-# s_list = List()
-s_list = LinkList()
+s_list = List()
+# s_list = LinkedList()
 for penguin in generator_10000:
     s_list.add(penguin)
 stop_time = datetime.utcnow() - start_time
@@ -24,8 +24,8 @@ print('Добавление 10000 элементов в конец массив�
 # таймер для добавления элементов в начало массива
 start_time = datetime.utcnow()
 
-# s_list = List()
-s_list = LinkList()
+s_list = List()
+# s_list = LinkedList()
 for penguin in generator_10000:
     s_list.add(penguin, 0)
 
