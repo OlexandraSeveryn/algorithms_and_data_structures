@@ -29,18 +29,3 @@ class AbstractQueue(ABC):
     @abstractmethod
     def top(self) -> object:
         ...
-
-
-class AbstractDeque(ABC):
-
-    @abstractmethod
-    def push_front(self, value: object):
-        ...
-
-    @abstractmethod
-    def push_back(self, value: object):
-        ...
-
-    @abstractmethod
-    def pop_front(self) -> object:
-        ...
