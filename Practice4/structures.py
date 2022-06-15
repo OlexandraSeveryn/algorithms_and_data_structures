@@ -1,6 +1,5 @@
 from algorithms.Practice4.AbstractLimitStructure import AbstractQueue, AbstractStack
 from algorithms.SecondPractice.practice import Generator, Penguin
-from collections import deque
 
 
 class Node:
@@ -19,11 +18,21 @@ class Stack(AbstractStack):
         node = Node(value)
         node.next = self.__head
 
-    def pop(self) -> Penguin:
-        return self.__list.pop()
+    def pop(self) -> (Penguin, None):
+        if self.__head is not None:
+            head = self.__head
+            top = head.n
+            new_top = top.n
+            head.n = new_top
+            return top.data
+        else:
+            return None
 
-    def top(self) -> Penguin:
-        return self.__list[-1]
+    def top(self) -> (Penguin, None):
+        if self.__head is not None:
+            return self.__head.data
+        else:
+            return None
 
     def __len__(self):
         return len(self.__list)
@@ -34,15 +43,27 @@ class Stack(AbstractStack):
 
 class Queue(AbstractQueue):
     __list = []
+    __size = 0
 
     def enqueue(self, value: Penguin):
         self.__list.append(value)
+        self.__size += 1
+        return True
 
-    def dequeue(self) -> Penguin:
-        return self.__list.pop(0)
+    def dequeue(self) -> (Penguin, None):
+        if self.__size != 0:
+            value = self.__list[0]
+            self.__list.remove(value)
+            self.__size -= 1
+            return value
+        else:
+            return None
 
-    def top(self) -> Penguin:
-        return self.__list[0]
+    def top(self) -> (Penguin, None):
+        if self.__size != 0:
+            return self.__list[0]
+        else:
+            return None
 
     def __len__(self):
         return len(self.__list)
@@ -70,17 +91,17 @@ if __name__ == '__main__':
     lst1 = stack.get_all()
     print(str(lst1))
 
-    print('-' * 10, 'queue', '-' * 10)
+    print('-' * 10, 'deque', '-' * 10)
 
     lst2 = [gen.generate_single() for i in range(5)]
     print(lst2)
 
-    queue = Queue()
+    queeue = Queue()
     for item in lst2:
-        queue.enqueue(item)
-    print(queue.get_all())
+        queeue.enqueue(item)
+    print(queeue.get_all())
 
-    queue.dequeue()
-    queue.dequeue()
-    print(queue.get_all())
-    print(len(queue))
+    queeue.dequeue()
+    queeue.dequeue()
+    print(queeue.get_all())
+    print(len(queeue))
